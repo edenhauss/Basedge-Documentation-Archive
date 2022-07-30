@@ -1,0 +1,104 @@
+:root {
+    --main-color: #202020;
+    --second-color: #e9e9e9;
+    --button-hover-color: #313131;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    font-family: Tahoma, 'Segoe UI', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+header {
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    filter: brightness(80%);
+}
+
+.tabButton {
+    width: 120px;
+    margin: 3px 0 4px 0;
+    padding: 0 5px;
+    white-space: normal;
+    cursor: pointer;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+
+.tabButton:hover {
+    background-color: var(--button-hover-color)
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.commandsContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.selectCommandContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.commandButton {
+    padding: 10px 12px;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid var(--second-color);
+    text-align: left;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+.commandButton:hover {
+    background-color: var(--button-hover-color)
+}
+
+.commandButton:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.commandButton:last-child {
+    border-radius: 0 0 8px 8px;
+    border-bottom: 1px solid var(--second-color);
+}
+
+.commandInfoContainer {
+    margin-right: 10px;
+}
+
+#logo {
+    /* background-color: aqua; */
+    height: 55px;
+    width: 55px;
+
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
