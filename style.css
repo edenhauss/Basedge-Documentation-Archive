@@ -2,6 +2,7 @@
     --main-color: #202020;
     --second-color: #e9e9e9;
     --button-hover-color: #313131;
+    --border-color: #9e9e9e;
 }
 
 * {
@@ -21,16 +22,24 @@ body {
     min-height: 100%;
 }
 
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
 header {
     height: 55px;
-    margin: 0 auto;
+    padding: 0 10px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     filter: brightness(80%);
 }
 
-.tabButton {
+.pageButton {
     width: 120px;
     margin: 3px 0 4px 0;
     padding: 0 5px;
@@ -44,8 +53,13 @@ header {
     border-radius: 8px;
 }
 
-.tabButton:hover {
+.pageButton:hover {
     background-color: var(--button-hover-color)
+}
+
+.pageButton.selected {
+    background-color: inherit;
+    filter: brightness(150%);
 }
 
 .container {
@@ -60,7 +74,7 @@ header {
     gap: 10px;
 }
 
-.selectCommandContainer {
+#SelectCommandContainer {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -74,6 +88,7 @@ header {
     text-align: left;
     border-bottom: none;
     font-size: 16px;
+    border-color: var(--border-color);
 }
 
 .commandButton:hover {
@@ -86,19 +101,164 @@ header {
 
 .commandButton:last-child {
     border-radius: 0 0 8px 8px;
-    border-bottom: 1px solid var(--second-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.commandInfoContainer {
+.commandButton.selected {
+    background-color: inherit;
+    filter: brightness(150%);
+}
+
+#CommandInfoContainer {
     margin-right: 10px;
+    width: 100%;
 }
 
-#logo {
-    /* background-color: aqua; */
-    height: 55px;
-    width: 55px;
+.infoTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: inherit;
+}
 
+.infoTable td {
+    border: 1px solid var(--border-color);
+    border-style: none solid solid none;
+    padding: 10px;
+}
+
+.infoTable td:first-child {
+    text-align: center;
+    font-weight: bold;
+    width: 160px;
+}
+
+.infoTable tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+
+.infoTable tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+}
+
+.infoTable tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.infoTable tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.infoTable tr:first-child td {
+    border-top-style: solid;
+}
+
+.infoTable tr td:first-child {
+    border-left-style: solid;
+}
+
+.exampleUsername {
+    color: #319422;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.exampleBot {
+    color: #3955a1;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.exampleTwitchMsg {
+    color: rgb(136, 136, 136);
+}
+
+.infoTable td>.exampleBot,
+td>.exampleTwitchMsg {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#LogoLink {
+    height: 100%;
+    width: 50px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#LogoImage {
+    height: 42px;
+    width: inherit;
     background-image: url("logo.png");
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 5px;
+    background-position-x: center;
+    animation: LogoStart 4s ease-in-out forwards;
+}
+
+#LogoImage:hover {
+    transform: scale(110%);
+    transition: 0.1s;
+}
+
+#LogoForeground {
+    height: 100%;
+    width: 50px;
+    margin-right: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--main-color), transparent);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    animation: LogoForegroundStart 4s ease-in-out forwards;
+}
+
+@keyframes LogoStart {
+    0% {
+        background-position-x: -55px;
+    }
+
+    40% {
+        background-position: -23px;
+    }
+
+    42% {
+        background-image: url("logo.png");
+    }
+
+    43% {
+        background-image: url("logo_sleep.png");
+    }
+
+    45% {
+        background-image: url("logo_sleep.png");
+    }
+
+    46% {
+        background-image: url("logo.png");
+    }
+
+    50% {
+        background-position: -23px;
+    }
+
+    100% {
+        background-position: center;
+    }
+}
+
+@keyframes LogoForegroundStart {
+    0% {
+        background-size: 20px;
+    }
+
+    50% {
+        background-size: 20px;
+    }
+
+    100% {
+        background-size: 0;
+    }
 }
