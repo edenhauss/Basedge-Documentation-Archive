@@ -74,7 +74,7 @@ header {
     gap: 10px;
 }
 
-#SelectCommandContainer {
+#CommandsListContainer {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -95,12 +95,13 @@ header {
     background-color: var(--button-hover-color)
 }
 
-.commandButton:first-child {
+#CommandsListContainer>.commandButton:first-child {
     border-radius: 8px 8px 0 0;
 }
 
-.commandButton:last-child {
-    border-radius: 0 0 8px 8px;
+#CommandsListContainer>.commandButton:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -162,6 +163,13 @@ header {
     margin-right: 5px;
 }
 
+.userIcon {
+    width: 18px;
+    margin-right: 3px;
+    position: relative;
+    top: 3px;
+}
+
 .exampleBot {
     color: #3955a1;
     font-weight: bold;
@@ -189,7 +197,7 @@ td>.exampleTwitchMsg {
 #LogoImage {
     height: 42px;
     width: inherit;
-    background-image: url("logo.png");
+    background-image: url("images/logo.png");
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 5px;
@@ -225,19 +233,19 @@ td>.exampleTwitchMsg {
     }
 
     42% {
-        background-image: url("logo.png");
+        background-image: url("images/logo.png");
     }
 
     43% {
-        background-image: url("logo_sleep.png");
+        background-image: url("images/logo_sleep.png");
     }
 
     45% {
-        background-image: url("logo_sleep.png");
+        background-image: url("images/logo_sleep.png");
     }
 
     46% {
-        background-image: url("logo.png");
+        background-image: url("images/logo.png");
     }
 
     50% {
