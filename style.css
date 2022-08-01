@@ -11,7 +11,7 @@
     box-sizing: border-box;
     background-color: var(--main-color);
     color: var(--second-color);
-    font-family: Tahoma, 'Segoe UI', sans-serif;
+    font-family: "Montserrat Light"
 }
 
 html {
@@ -30,13 +30,24 @@ body {
     -o-user-select: none;
 }
 
-header {
+.upper-header {
     height: 55px;
     padding: 0 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
     filter: brightness(80%);
+}
+
+.lower-header {
+    height: 45px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    filter: brightness(80%);
+
+    background: #1a1a1a;
 }
 
 .pageButton {
@@ -49,17 +60,18 @@ header {
     background-color: transparent;
     font-size: 14px;
     font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 3px;
+
+    transition: 0.2s;
 }
 
 .pageButton:hover {
-    background-color: var(--button-hover-color)
+    transform: scale(1.05);
+    transition: 0.4s;
 }
 
 .pageButton.selected {
-    background-color: inherit;
-    filter: brightness(150%);
+    color: #737373;
 }
 
 .container {
@@ -70,7 +82,7 @@ header {
 .commandsContainer {
     display: flex;
     justify-content: flex-start;
-    margin-top: 10px;
+    margin-top: 30px;
     gap: 10px;
 }
 
@@ -78,11 +90,13 @@ header {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+    font-family: monospace;
+    font-weight: lighter;
 }
 
 .commandButton {
     padding: 10px 12px;
-    width: 100px;
+    width: 130px;
     cursor: pointer;
     border: 1px solid var(--second-color);
     text-align: left;
@@ -96,18 +110,17 @@ header {
 }
 
 #CommandsListContainer>.commandButton:first-child {
-    border-radius: 8px 8px 0 0;
+    border-radius: 6px 0px 0 0;
 }
 
 #CommandsListContainer>.commandButton:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 0px;
     border-bottom: 1px solid var(--border-color);
 }
 
 .commandButton.selected {
-    background-color: inherit;
-    filter: brightness(150%);
+    filter: brightness(140%);
 }
 
 #CommandInfoContainer {
@@ -134,19 +147,19 @@ header {
 }
 
 .infoTable tr:first-child td:first-child {
-    border-top-left-radius: 10px;
+    border-top-left-radius: 0px;
 }
 
 .infoTable tr:first-child td:last-child {
-    border-top-right-radius: 10px;
+    border-top-right-radius: 6px;
 }
 
 .infoTable tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 0px;
 }
 
 .infoTable tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 6px;
 }
 
 .infoTable tr:first-child td {
@@ -158,7 +171,7 @@ header {
 }
 
 .exampleUsername {
-    color: #319422;
+    color: rgb(0, 255, 7);
     font-weight: bold;
     margin-right: 5px;
 }
@@ -171,7 +184,7 @@ header {
 }
 
 .exampleBot {
-    color: #3955a1;
+    color: rgb(95, 158, 160);
     font-weight: bold;
     margin-right: 5px;
 }

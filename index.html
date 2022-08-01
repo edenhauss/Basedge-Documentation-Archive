@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preload" href="logo.png" as="image">
     <link rel="preload" href="logo_sleep.png" as="image">
-    <title>Basedge</title>
+    <title>Basedge Documentation</title>
 </head>
 
 <body>
     <header>
-        <a id="LogoLink" href="">
-            <div id="LogoImage">
-                <div id="LogoForeground"></div>
-            </div>
-        </a>
-        <button class="pageButton" id="CommandsPageButton">Команды</button>
-        <button class="pageButton" id="AdminCommandsPageButton">Админ команды</button>
-        <button class="pageButton" id="GameCommandsPageButton">Игровые команды</button>
-        <button class="pageButton" id="TestCommandsPageButton">Test</button>
-        <button class="pageButton" id="CustomPageButton">Custom page</button>
+        <div class="upper-header">
+            <a id="LogoLink" href="">
+                <div id="LogoImage">
+                    <div id="LogoForeground"></div>
+                </div>
+            </a>
+        </div>
+        <div class="lower-header">
+            <button class="pageButton" id="CommandsPageButton">Команды</button>
+            <button class="pageButton" id="GameCommandsPageButton">Игры</button>
+            <button class="pageButton" id="AdminCommandsPageButton">Модерация</button>
+            <button class="pageButton" id="TestCommandsPageButton">О нас</button>
+        </div>
     </header>
     
     <div class="container" id="CmdPage">

@@ -15,7 +15,7 @@ class Command {
         if (this.description !== null) {
             let tr = document.createElement("tr");
             let td = document.createElement("td");
-            td.textContent = "Описание";
+            td.textContent = "Команда";
             tr.append(td);
             td = document.createElement("td");
             td.textContent = this.description;
@@ -28,7 +28,7 @@ class Command {
             td.textContent = "Кд";
             tr.append(td);
             td = document.createElement("td");
-            td.textContent = `${this.cooldown}с`;
+            td.textContent = `${this.cooldown} сек.`;
             tr.append(td);
             table.append(tr);
         }
@@ -52,9 +52,27 @@ class Command {
                     vipIcon.src = "images/vip.png";
                     td.append(vipIcon);
                 }
+                if (this.exampleUserMsg.isOwner) {
+                    let ownerIcon = document.createElement("img");
+                    ownerIcon.classList.add("userIcon");
+                    ownerIcon.src = "images/broadcaster.png";
+                    td.append(ownerIcon);
+                }
+                if (this.exampleUserMsg.isNovideo) {
+                    let novideoIcon = document.createElement("img");
+                    novideoIcon.classList.add("userIcon");
+                    novideoIcon.src = "images/no-video.png";
+                    td.append(novideoIcon);
+                }
+                if (this.exampleUserMsg.isGlitch) {
+                    let glitchIcon = document.createElement("img");
+                    glitchIcon.classList.add("userIcon");
+                    glitchIcon.src = "images/glitch.png";
+                    td.append(glitchIcon);
+                }
                 let spanUser = document.createElement("span");
                 let spanUserMsg = document.createElement("span");
-                spanUser.textContent = "Username:";
+                spanUser.textContent = "mooncat3:";
                 spanUser.classList.add("exampleUsername");
                 spanUserMsg.textContent = this.exampleUserMsg.msg;
                 spanUserMsg.classList.add("exampleNicknameMsg");
@@ -74,6 +92,24 @@ class Command {
                         vipIcon.classList.add("userIcon");
                         vipIcon.src = "images/vip.png";
                         td.append(vipIcon);
+                    }
+                    if (this.exampleBotMsg.isOwner) {
+                        let ownerIcon = document.createElement("img");
+                        ownerIcon.classList.add("userIcon");
+                        ownerIcon.src = "images/broadcaster.png";
+                        td.append(ownerIcon);
+                    }
+                    if (this.exampleBotMsg.isNovideo) {
+                        let novideoIcon = document.createElement("img");
+                        novideoIcon.classList.add("userIcon");
+                        novideoIcon.src = "images/no-video.png";
+                        td.append(novideoIcon);
+                    }
+                    if (this.exampleBotMsg.isGlitch) {
+                        let glitchIcon = document.createElement("img");
+                        glitchIcon.classList.add("userIcon");
+                        glitchIcon.src = "images/glitch.png";
+                        td.append(glitchIcon);
                     }
                     let spanBot = document.createElement("span");
                     let spanBotMsg = document.createElement("span");
@@ -109,9 +145,12 @@ const CommandsList = [
 ];
 
 const AdminCommandsList = [
-    new Command("!мут", "Мутит выбранного пользователя", 0, { msg: "!мут morange51 20 рофл", isMod: true }, null,
-        "morange51 has been timed out for 20s."),
-    new Command("!спам", "Спамит сообщением", null, { msg: ["!spam 3 Hello World"], isMod: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true }),
+    new Command("!ban", "Блокировка пользователя", 0, { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!mute", "Таймаут пользователя", 0, { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!unban", "Разжалование пользователя", 0, { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+    new Command("!spam", "Спам фразой", 5, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!add", "Добавить кастомную команду", 0, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!del", "Удалить кастомную команду", 0, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true })
 ];
 
 const GameCommandsList = [
