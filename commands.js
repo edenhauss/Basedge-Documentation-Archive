@@ -1,8 +1,10 @@
 class Command {
-    constructor(name, description = null, cooldown = null, exampleUserMsg = null, exampleBotMsg = null, twitchMsg = null) {
+    constructor(name, description = null, cooldown = null, syntax = null, perm = null, exampleUserMsg = null, exampleBotMsg = null, twitchMsg = null) {
         this.name = name;
         this.description = description;
         this.cooldown = cooldown;
+        this.syntax = syntax;
+        this.perm = perm;
         this.exampleUserMsg = exampleUserMsg;
         this.exampleBotMsg = exampleBotMsg;
         this.twitchMsg = twitchMsg;
@@ -25,10 +27,30 @@ class Command {
         if (this.cooldown !== null) {
             let tr = document.createElement("tr");
             let td = document.createElement("td");
-            td.textContent = "Кд";
+            td.textContent = "Cooldown";
             tr.append(td);
             td = document.createElement("td");
             td.textContent = `${this.cooldown} сек.`;
+            tr.append(td);
+            table.append(tr);
+        }
+        if (this.syntax !== null) {
+            let tr = document.createElement("tr");
+            let td = document.createElement("td");
+            td.textContent = "Синтаксис";
+            tr.append(td);
+            td = document.createElement("td");
+            td.innerHTML = StringFormatting(this.syntax);
+            tr.append(td);
+            table.append(tr);
+        }
+        if (this.perm !== null) {
+            let tr = document.createElement("tr");
+            let td = document.createElement("td");
+            td.textContent = "Доступ";
+            tr.append(td);
+            td = document.createElement("td");
+            td.textContent = `${this.perm}`;
             tr.append(td);
             table.append(tr);
         }
@@ -145,12 +167,12 @@ const CommandsList = [
 ];
 
 const AdminCommandsList = [
-    new Command("!ban", "Блокировка пользователя", 0, { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
-    new Command("!mute", "Таймаут пользователя", 0, { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
-    new Command("!unban", "Разжалование пользователя", 0, { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
-    new Command("!spam", "Спам фразой", 5, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
-    new Command("!add", "Добавить кастомную команду", 0, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
-    new Command("!del", "Удалить кастомную команду", 0, { msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true })
+    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason", "Модератор", { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", null,{ msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!unban", "Разжалование пользователя", 0, "!unban $user", null,{ msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+    new Command("!spam", "Спам фразой", 5, "!spam $amount $message",null,{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", null,{ msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк добавлена."], isMod: true, isNovideo: true }),
+    new Command("!del", "Добавить кастомную команду", 0, "!del $command", null,{ msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true })
 ];
 
 const GameCommandsList = [

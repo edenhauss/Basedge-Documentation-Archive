@@ -103,4 +103,10 @@ function ShowPage(page) {
     document.getElementById(PageData[CurrentPage].id).style.display = "block";
 }
 
+function StringFormatting(input) {
+    const pattern = /\$[A-zА-я0-9]+/g;
+    return input.replace(pattern, m => {
+        return `<span class="coloredWord">$${m.substring(1)}</span>`;
+    });
+}
 ShowPage(Pages.Commands);

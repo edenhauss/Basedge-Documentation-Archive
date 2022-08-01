@@ -128,6 +128,12 @@ body {
     width: 100%;
 }
 
+.coloredWord{
+    color: #ffffff;
+    background: #c1000042;
+}
+
+
 .infoTable {
     border-collapse: separate;
     border-spacing: 0;
@@ -239,6 +245,11 @@ td>.exampleTwitchMsg {
 @keyframes LogoStart {
     0% {
         background-position-x: -55px;
+        background-image: url("images/logo_sleep.png");
+    }
+    1% {
+        background-position-x: -55px;
+        background-image: url("images/logo.png");
     }
 
     40% {
