@@ -19,9 +19,8 @@ const PageData = {
     2: { button: AdminCommandsPageBtnElem, id: "CmdPage", cmdTableData: AdminCommandsList },
     3: { button: GameCommandsPageBtnElem, id: "CmdPage", cmdTableData: GameCommandsList },
     4: { button: TestCommandsPageBtnElem, id: "CmdPage", cmdTableData: TestCommandsList },
-    5: { button: CustomPageBtnElem, id: "CustomPage"}
+    5: { button: CustomPageBtnElem, id: "CustomPage" }
 }
-const CmdPages = [Pages.Commands, Pages.AdminCommands, Pages.GameCommands, Pages.TestCommands];
 let CurrentPage = Pages.None;
 
 CommandsPageBtnElem.onclick = () => {
@@ -93,7 +92,7 @@ function ShowPage(page) {
         return;
     }
 
-    if (CmdPages.includes(page)) {
+    if (PageData[page].id == "CmdPage") {
         ShowTablePage(page);
     }
 
