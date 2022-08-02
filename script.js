@@ -106,7 +106,7 @@ function ShowPage(page) {
 function StringFormatting(input) {
     const pattern = /\$[A-zА-я0-9]+/g;
     return input.replace(pattern, m => {
-        return `<span class="coloredWord" title="что">$${m.substring(1)}</span>`;
+        return `<span class="coloredWord">$${m.substring(1)}</span>`;
     });
 }
 ShowPage(Pages.Commands);

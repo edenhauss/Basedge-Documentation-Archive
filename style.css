@@ -92,7 +92,7 @@ body {
 
 .pageButton.selected {
     color: #737373;
-    transform: scale(0.95);
+    transform: scale(0.97);
 }
 
 .container {
