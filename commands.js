@@ -1,10 +1,9 @@
 class Command {
-    constructor(name, description = null, cooldown = null, syntax = null, perm = null, exampleUserMsg = null, exampleBotMsg = null, twitchMsg = null) {
+    constructor(name, description = null, cooldown = null, syntax = null, exampleUserMsg = null, exampleBotMsg = null, twitchMsg = null) {
         this.name = name;
         this.description = description;
         this.cooldown = cooldown;
         this.syntax = syntax;
-        this.perm = perm;
         this.exampleUserMsg = exampleUserMsg;
         this.exampleBotMsg = exampleBotMsg;
         this.twitchMsg = twitchMsg;
@@ -38,16 +37,6 @@ class Command {
             let tr = document.createElement("tr");
             let td = document.createElement("td");
             td.textContent = "Синтаксис";
-            tr.append(td);
-            td = document.createElement("td");
-            td.innerHTML = StringFormatting(this.syntax);
-            tr.append(td);
-            table.append(tr);
-        }
-        if (this.syntax !== null) {
-            let tr = document.createElement("tr");
-            let td = document.createElement("td");
-            td.textContent = "Доступ";
             tr.append(td);
             td = document.createElement("td");
             td.innerHTML = StringFormatting(this.syntax);
@@ -157,28 +146,29 @@ class Command {
 }
 
 const CommandsList = [
-    new Command("!тест", "qweqwe", null, { msg: "message", isMod: true, isVip: true }, { msg: ["answer"], isMod: true }),
-    new Command("!тест2", "asdasd", null, { msg: "message" }),
-    new Command("!тест3", "asdasd", 5, null, { msg: ["qweqwe"], isVip: true }, "1123231232"),
-    new Command("!цвет", "Выводит цвет твоего ника в чат"),
-    new Command("!погода", "Выводит значения погоды для выбранного региона", null, { msg: "!погода калининград" },
-        { msg: ["Username, погода в Калининград, Россия. 🕑 Местное время - 23:23 🌡 +16°C (ощущается как +14°C) ☀ Ясно 💧 Влажность - 88% 💨 2м/с 🌆 Закат в 20:44"], isMod: true }),
-    new Command("!math", "Введите пример, бот выведет решение")
+    new Command("!color", "Цвет никнейма", 3, "!color", { msg: ["!color"], isOwner: true, isGlitch: true }, { msg: ["&mooncat3, твой цвет Апельсиновый"], isMod: true, isNovideo: true }),
+    new Command("!forecast", "Прогноз погоды на 3 дня", 30, "!forecast $region", { msg: ["!forecast Москва"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, прогноз для Москва, Россия. Вторник: +28°C 🌤 Облачно с прояснениями. Среда: +30°C ☁ Пасмурно. Четверг: +29°C 🌧 Небольшой дождь."], isMod: true, isNovideo: true }),
+    new Command("!math", "Решение примера", 5, "!math $problem",{ msg: ["!math 2*2"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, 2*2 = 4"], isMod: true, isNovideo: true }),
+    new Command("!weather", "Прогноз погоды на текущий момент", 30, "!weather $region",  { msg: ["!weather Москва"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, погода в Москва, Россия. 🕑 Местное время - 18:15 🌡 +27°C (ощущается как +26°C) 🌤 Облачно с прояснениями 💧 Влажность - 41% 💨 1.6м/с 🌆 Закат в 20:35"], isMod: true, isNovideo: true }),
 ];
 
 const AdminCommandsList = [
-    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason", { msg: ["test"], isMod: true}, { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
-    new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", null,{ msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
-    new Command("!unban", "Разжалование пользователя", 0, "!unban $user", null,{ msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
-    new Command("!spam", "Спам фразой", 5, "!spam $amount $message",null,{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
-    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", null,{ msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк добавлена."], isMod: true, isNovideo: true }),
-    new Command("!del", "Добавить кастомную команду", 0, "!del $command", null,{ msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", { msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true}, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason",  { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!del", "Удалить кастомную команду", 0, "!del $command", { msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!spam", "Спам фразой", 3, "!spam $amount $message",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!unban", "Разжалование пользователя", 0, "!unban $user", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+
 ];
 
 const GameCommandsList = [
-
+    new Command("!casino", "Виртуальное казино", 3, "!casino $bet $amount", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!roulette", "Русская рулетка", 5, "!roulette",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!slots", "Слоты", 3, "!slots $amount",  { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!trade", "Акции", 3, "!trade $bet $amount", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
 ];
 
 const TestCommandsList = [
-    new Command("!qwerty")
+    new Command("test page")
 ];

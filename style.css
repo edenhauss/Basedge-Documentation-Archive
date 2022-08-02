@@ -18,19 +18,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-}
-
-::-webkit-scrollbar-track {
-    background: #383838;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #354f1a;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #456923;
+    width: 0px;
 }
 
 html {
@@ -59,7 +47,7 @@ body {
 }
 
 .lower-header {
-    height: 45px;
+    height: 0px;
     padding: 0 10px;
     display: flex;
     justify-content: center;
@@ -67,6 +55,53 @@ body {
     filter: brightness(80%);
 
     background: #1a1a1a;
+    animation: Header 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+header p {
+    position: fixed;
+    z-index: 200;
+    color: #ffc966;
+    background: #1a1a1a;
+    text-align: center;
+    top: 17px;
+    right: 15px;
+}
+
+@keyframes Header {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 55px;
+    }
+}
+
+@keyframes HeaderOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ContainerOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    opacity: 0;
+    animation: ContainerOpacity 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
 }
 
 .pageButton {
@@ -77,16 +112,25 @@ body {
     cursor: pointer;
     border-width: 0px;
     background-color: transparent;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     border-radius: 3px;
+    opacity: 0;
 
     font-family: "Montserrat Light";
     transition: 0.2s;
+    animation: HeaderOpacity 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.footer-container {
+    margin-top:auto;
+    background: red;
 }
 
 .pageButton:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: 0.4s;
 }
 
@@ -144,6 +188,7 @@ body {
 }
 
 .commandButton.selected {
+    color: rgb(98 98 98);
     filter: brightness(140%);
 }
 
