@@ -163,10 +163,10 @@ const AdminCommandsList = [
 ];
 
 const GameCommandsList = [
-    new Command("!casino", "Виртуальное казино", 3, "!casino $bet $amount", { msg: ["!casino зеленое 100"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
+    new Command("!casino", "Виртуальное казино", 3, "!casino $bet $amount", { msg: ["!casino желтое 100"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, выпадает x3 (желтое). Вы выиграли +300.0р. Баланс: 450.0р."], isMod: true, isNovideo: true }),
     new Command("!roulette", "Русская рулетка", 5, "!roulette",{ msg: ["!roulette"], isOwner: true, isGlitch: true }, { msg: ["mooncat3 жмет на курок..."], isMod: true, isNovideo: true }, "basedgebot timed out mooncat3 for 60 seconds."),
-    new Command("!slots", "Слоты", 3, "!slots $amount",  { msg: ["!slots 150"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
-    new Command("!trade", "Акции", 3, "!trade $bet $amount", { msg: ["!trade вниз 250"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
+    new Command("!slots", "Слоты", 3, "!slots $amount",  { msg: ["!slots 150"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, |🍒| |🍉| |🍒| Вы проиграли -150.0р. Баланс: 300.0р."], isMod: true, isNovideo: true }),
+    new Command("!trade", "Акции", 3, "!trade $bet $amount", { msg: ["!trade вниз 250"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, акции пошли вверх 📈 Вы выиграли +250.0р. Баланс 550.0р"], isMod: true, isNovideo: true }),
 ];
 
 const TestCommandsList = [
