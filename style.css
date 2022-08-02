@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: "Montserrat Light";
+    font-family: Roobert, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -58,6 +58,10 @@ body {
     animation: Header 2s;
     animation-delay: 3s;
     animation-fill-mode: forwards;
+}
+
+header p {
+    font-family: "Montserrat Light";
 }
 
 header .attention {
@@ -277,7 +281,7 @@ header .stabilize {
 }
 
 .exampleBot {
-    color: rgb(95, 158, 160);
+    color: rgb(154, 205, 50);
     font-weight: bold;
     margin-right: 5px;
 }
