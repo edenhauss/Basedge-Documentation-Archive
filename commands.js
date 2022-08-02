@@ -44,13 +44,13 @@ class Command {
             tr.append(td);
             table.append(tr);
         }
-        if (this.perm !== null) {
+        if (this.syntax !== null) {
             let tr = document.createElement("tr");
             let td = document.createElement("td");
-            td.textContent = "Доступ";
+            td.textContent = "Синтаксис";
             tr.append(td);
             td = document.createElement("td");
-            td.textContent = `${this.perm}`;
+            td.innerHTML = StringFormatting(this.syntax);
             tr.append(td);
             table.append(tr);
         }
@@ -167,11 +167,11 @@ const CommandsList = [
 ];
 
 const AdminCommandsList = [
-    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason", "Модератор", { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason", { msg: ["test"], isMod: true}, { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
     new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", null,{ msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
     new Command("!unban", "Разжалование пользователя", 0, "!unban $user", null,{ msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
     new Command("!spam", "Спам фразой", 5, "!spam $amount $message",null,{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
-    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", null,{ msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк добавлена."], isMod: true, isNovideo: true }),
+    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", null,{ msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк добавлена."], isMod: true, isNovideo: true }, 'chat'),
     new Command("!del", "Добавить кастомную команду", 0, "!del $command", null,{ msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true })
 ];
 

@@ -14,6 +14,22 @@
     font-family: "Montserrat Light"
 }
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #354f1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #456923;
+}
+
 html {
     height: 100%;
 }
@@ -132,7 +148,6 @@ body {
     color: #ffffff;
     background: #c1000042;
 }
-
 
 .infoTable {
     border-collapse: separate;
