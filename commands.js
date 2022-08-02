@@ -163,10 +163,10 @@ const AdminCommandsList = [
 ];
 
 const GameCommandsList = [
-    new Command("!casino", "Виртуальное казино", 3, "!casino $bet $amount", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
-    new Command("!roulette", "Русская рулетка", 5, "!roulette",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
-    new Command("!slots", "Слоты", 3, "!slots $amount",  { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
-    new Command("!trade", "Акции", 3, "!trade $bet $amount", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+    new Command("!casino", "Виртуальное казино", 3, "!casino $bet $amount", { msg: ["!casino зеленое 100"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
+    new Command("!roulette", "Русская рулетка", 5, "!roulette",{ msg: ["!roulette"], isOwner: true, isGlitch: true }, { msg: ["mooncat3 жмет на курок..."], isMod: true, isNovideo: true }, "basedgebot timed out mooncat3 for 60 seconds."),
+    new Command("!slots", "Слоты", 3, "!slots $amount",  { msg: ["!slots 150"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
+    new Command("!trade", "Акции", 3, "!trade $bet $amount", { msg: ["!trade вниз 250"], isOwner: true, isGlitch: true },  { msg: ["mooncat3, "], isMod: true, isNovideo: true }),
 ];
 
 const TestCommandsList = [

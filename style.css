@@ -60,13 +60,23 @@ body {
     animation-fill-mode: forwards;
 }
 
-header p {
+header .attention {
     position: fixed;
     z-index: 200;
     color: #ffc966;
     background: #1a1a1a;
     text-align: center;
-    top: 17px;
+    top: 3px;
+    right: 15px;
+}
+
+header .stabilize {
+    position: fixed;
+    z-index: 200;
+    color: #9aff66;
+    background: #1a1a1a;
+    text-align: center;
+    top: 30px;
     right: 15px;
 }
 
