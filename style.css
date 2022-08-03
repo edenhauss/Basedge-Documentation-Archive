@@ -137,8 +137,8 @@ header .stabilize {
 }
 
 .footer-container {
-    margin-top:auto;
-    background: red;
+    position: absolute;
+    bottom: 0;
 }
 
 .pageButton:hover {
@@ -315,10 +315,11 @@ td>.exampleTwitchMsg {
     border-radius: 5px;
     background-position-x: center;
     animation: LogoStart 4s ease-in-out forwards;
+    transition: 0.2s;
 }
 
 #LogoImage:hover {
-    transform: scale(110%);
+    transform: scale(105%);
     transition: 0.1s;
 }
 
