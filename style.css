@@ -15,6 +15,8 @@
 
 body {
     font-family: Roobert, sans-serif;
+    font-weight: 100;
+    min-height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -23,10 +25,6 @@ body {
 
 html {
     height: 100%;
-}
-
-body {
-    min-height: 100%;
 }
 
 .unselectable {
@@ -218,6 +216,10 @@ header .stabilize {
     padding-bottom: 1px;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.coloredText {
+    color: rgb(154, 205, 50);
 }
 
 .coloredWord:hover {

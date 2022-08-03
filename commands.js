@@ -126,7 +126,7 @@ class Command {
                     let spanBotMsg = document.createElement("span");
                     spanBot.textContent = "BasedgeBot:";
                     spanBot.classList.add("exampleBot");
-                    spanBotMsg.textContent = m;
+                    spanBotMsg.innerHTML = StringFormatting(m);
                     spanBotMsg.classList.add("exampleBotMsg");
                     td.append(spanBot, spanBotMsg, document.createElement("br"));
                 });
