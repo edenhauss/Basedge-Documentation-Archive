@@ -94,11 +94,13 @@ function ShowPage(page) {
     Array.from(document.getElementsByClassName("pageButton")).forEach((btn) => {
         btn.classList.remove("selected");
     });
-    PageData[CurrentPage].button.classList.add("selected");
+    if (PageData[CurrentPage].button) {
+        PageData[CurrentPage].button.classList.add("selected");
+    }
 
-    AllPagesId.forEach(id => {
-        document.getElementById(id).style.display = "none";
-    });
+    for (const [_, value] of Object.entries(PageData)) {
+        document.getElementById(value.id).style.display = "none";
+    }
     document.getElementById(PageData[CurrentPage].id).style.display = "block";
 }
 

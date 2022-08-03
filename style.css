@@ -109,7 +109,47 @@ header .stabilize {
     }
 }
 
-.container {
+#CustomPage {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 10px 10px 0 0;
+
+    padding: 10px 0px;
+    border: 1px solid rgb(80, 80, 80);
+}
+
+#CustomPage a {
+    text-decoration: none;
+}
+
+.merchfck {
+    color: rgb(154, 205, 50);
+    transition: 0.1s;
+}
+
+.dyzrol {
+    color: rgb(0, 255, 127);
+    transition: 0.1s;
+}
+
+.mooncat3 {
+    color: rgb(0, 255, 7);
+    transition: 0.1s;
+}
+
+.merchfck:hover {
+    color: rgb(126, 168, 41);
+}
+
+.dyzrol:hover {
+    color: rgb(0 191 95);
+}
+
+.mooncat3:hover {
+    color: rgb(0 201 6);
+}
+
+.several-containers {
     opacity: 0;
     animation: ContainerOpacity 2s;
     animation-delay: 4s;
