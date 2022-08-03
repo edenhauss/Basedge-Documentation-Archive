@@ -4,7 +4,6 @@ const CommandsPageBtnElem = document.getElementById("CommandsPageButton");
 const AdminCommandsPageBtnElem = document.getElementById("AdminCommandsPageButton");
 const GameCommandsPageBtnElem = document.getElementById("GameCommandsPageButton");
 const CustomPageBtnElem = document.getElementById("CustomPageButton");
-const AllPagesId = ["CmdPage", "CustomPage"];
 const Pages = {
     None: 0,
     Commands: 1,
