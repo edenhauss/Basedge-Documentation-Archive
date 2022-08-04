@@ -73,6 +73,18 @@ function ShowCommand(cmd, button) {
         btn.classList.remove("selected");
     });
     button.classList.add("selected");
+
+    Array.from(document.getElementsByClassName("coloredWord")).forEach((elem) => {
+        if (elem.hasAttribute('data-replace-text')) {
+            const content = elem.textContent;
+            elem.onmouseover = function () {
+                elem.textContent = elem.dataset.replaceText;
+            };
+            elem.onmouseout = function () {
+                elem.textContent = content;
+            };
+        }
+    });
 }
 
 function ShowPage(page) {
@@ -98,7 +110,7 @@ function ShowPage(page) {
     document.getElementById(PageData[CurrentPage].id).style.display = "block";
 }
 
-function StringFormatting(input) {
+function GetFormattedStringSpan(input) {
     const coloredTextPattern = /\&.+/g;
     input = input.replace(coloredTextPattern, m => {
         return `<span class="coloredText">${m.substring(1)}</span>`;
