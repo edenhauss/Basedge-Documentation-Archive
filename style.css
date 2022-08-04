@@ -220,24 +220,10 @@ footer {
 }
 
 footer .a1 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("images/git.png");
-    filter: hue-rotate(26deg);
-}
-
-footer .a2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("images/git.png");
-    filter: hue-rotate(352deg);
-}
-
-footer .a3 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("images/git.png");
-    filter: hue-rotate(342deg);
+    background-size: contain;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    background-image: url("images/linktree.png");
 }
 
 footer a:hover {
