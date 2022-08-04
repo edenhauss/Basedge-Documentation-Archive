@@ -145,9 +145,12 @@ header .stabilize {
     animation-fill-mode: forwards;
 }
 
+footer {
+
+}
+
 .footer-container {
-    position: absolute;
-    bottom: 0;
+
 }
 
 .pageButton:hover {
