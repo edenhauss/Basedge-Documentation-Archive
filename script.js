@@ -3,19 +3,16 @@ const CommandInfoElem = document.getElementById("CommandInfoContainer");
 const CommandsPageBtnElem = document.getElementById("CommandsPageButton");
 const AdminCommandsPageBtnElem = document.getElementById("AdminCommandsPageButton");
 const GameCommandsPageBtnElem = document.getElementById("GameCommandsPageButton");
-const CustomPageBtnElem = document.getElementById("CustomPageButton");
 const Pages = {
     None: 0,
     Commands: 1,
     AdminCommands: 2,
     GameCommands: 3,
-    CustomPage: 4,
 };
 const PageData = {
     1: { button: CommandsPageBtnElem, id: "CmdPage", cmdTableData: CommandsList },
     2: { button: AdminCommandsPageBtnElem, id: "CmdPage", cmdTableData: AdminCommandsList },
-    3: { button: GameCommandsPageBtnElem, id: "CmdPage", cmdTableData: GameCommandsList },
-    4: { button: CustomPageBtnElem, id: "CustomPage" }
+    3: { button: GameCommandsPageBtnElem, id: "CmdPage", cmdTableData: GameCommandsList }
 }
 let CurrentPage = Pages.None;
 
@@ -27,9 +24,6 @@ AdminCommandsPageBtnElem.onclick = () => {
 }
 GameCommandsPageBtnElem.onclick = () => {
     ShowPage(Pages.GameCommands);
-}
-CustomPageBtnElem.onclick = () => {
-    ShowPage(Pages.CustomPage);
 }
 
 
