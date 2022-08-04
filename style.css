@@ -214,8 +214,8 @@ footer {
 }
 
 .footerItem {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background-color: #161616;
 }
 
@@ -227,7 +227,7 @@ footer .a1 {
 }
 
 footer a:hover {
-    margin-top: 2px;
+    transform: scale(0.95);
     transition: 0.1s;
 }
 
