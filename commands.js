@@ -159,6 +159,18 @@ const AdminCommandsList = [
     new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
     new Command("!spam", "Спам фразой", 3, "!spam $amount $message",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
     new Command("!unban", "Разжалование пользователя", 0, "!unban $user", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", { msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true}, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason",  { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!del", "Удалить кастомную команду", 0, "!del $command", { msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!spam", "Спам фразой", 3, "!spam $amount $message",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!unban", "Разжалование пользователя", 0, "!unban $user", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
+    new Command("!add", "Добавить кастомную команду", 0, "!add $command $cooldown $message", { msg: ["!add !вк 10 vk.com/me"], isOwner: true, isGlitch: true}, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!ban", "Блокировка пользователя", 0, "!ban $user $reason",  { msg: ["!ban @morange51 п-ворд"], isOwner: true, isGlitch: true }, null, "basedgebot banned morange51. Reason: п-ворд."),
+    new Command("!del", "Удалить кастомную команду", 0, "!del $command", { msg: ["!del !вк"], isOwner: true, isGlitch: true }, { msg: ["mooncat3, команда !вк удалена."], isMod: true, isNovideo: true }),
+    new Command("!mute", "Таймаут пользователя", 0, "!mute $user $seconds $reason", { msg: ["!mute @morange51 60 спам"], isOwner: true, isGlitch: true }, null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
+    new Command("!spam", "Спам фразой", 3, "!spam $amount $message",{ msg: ["!spam 3 Hello World"], isOwner: true, isGlitch: true }, { msg: ["Hello World", "Hello World", "Hello World"], isMod: true, isNovideo: true }),
+    new Command("!unban", "Разжалование пользователя", 0, "!unban $user", { msg: ["!unban @morange51"], isOwner: true, isGlitch: true }, null, "basedgebot removed ban on morange51."),
 
 ];
 
