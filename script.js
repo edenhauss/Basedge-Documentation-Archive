@@ -72,19 +72,6 @@ function ShowCommand(cmd, button) {
     Array.from(document.getElementsByClassName("commandButton")).forEach((btn) => {
         btn.classList.remove("selected");
     });
-    button.classList.add("selected");
-
-    Array.from(document.getElementsByClassName("coloredWord")).forEach((elem) => {
-        if (elem.hasAttribute('data-replace-text')) {
-            const content = elem.textContent;
-            elem.onmouseover = function () {
-                elem.textContent = elem.dataset.replaceText;
-            };
-            elem.onmouseout = function () {
-                elem.textContent = content;
-            };
-        }
-    });
 }
 
 function ShowPage(page) {
@@ -111,13 +98,14 @@ function ShowPage(page) {
 }
 
 function GetFormattedStringSpan(input) {
-    const coloredTextPattern = /\&.+/g;
-    input = input.replace(coloredTextPattern, m => {
+    const coloredTextRegex = new RegExp(/\&.+/g);
+    const coloredWordRegex = new RegExp(/\[([^\]]*)\]\$([^\s]+)|()\$([^\s]+)/g);
+    input = input.replace(coloredTextRegex, m => {
         return `<span class="coloredText">${m.substring(1)}</span>`;
     });
-    const coloredWordPattern = /\$[A-zА-я0-9]+/g;
-    return input.replace(coloredWordPattern, m => {
-        return `<span class="coloredWord">$${m.substring(1)}</span>`;
+    return input.replace(coloredWordRegex, m => {
+        m = new RegExp(/\[([^\]]*)\]\$([^\s]+)|()\$([^\s]+)/).exec(m);
+        return `<span class="coloredWord"${(m[1] ? ` data-replace-text="${m[1]}"` : "")}><span>$${(m[2] ? m[2] : m[4])}</span></span>`;
     });
 }
 ShowPage(Pages.Commands);

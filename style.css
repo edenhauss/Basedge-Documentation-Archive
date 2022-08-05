@@ -208,22 +208,22 @@ header .stabilize {
 
 #footer .poopoo {
     height: 52px;
-    left: -5%;
-    bottom: 60px;
+    left: -3%;
+    bottom: 53px;
     position: absolute;
 
-    animation: poopoo 40s infinite linear;
+    animation: poopoo 140s infinite linear;
     animation-delay: 1.5s;
 }
 
 @keyframes poopoo {
     0% {
-        left: -5%;
-        bottom: 60px;
+        left: -3%;
+        bottom: 53px;
     }
     95% {
         left: 95%;
-        bottom: 60px;
+        bottom: 53px;
     }
     100% {
         left: 95%;
@@ -249,22 +249,23 @@ footer a {
 
 footer .a1 {
     background-color: #161616;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 
-    animation: shake 5s;
+    animation: shake 4s;
+    animation-delay: 10s;
     animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    1% { transform: translate(-1px, -2px) rotate(-1deg); }
-    2% { transform: translate(-3px, 0px) rotate(1deg); }
-    3% { transform: translate(3px, 2px) rotate(0deg); }
-    4% { transform: translate(1px, -1px) rotate(1deg); }
-    5% { transform: translate(-1px, 2px) rotate(-1deg); }
-    6% { transform: translate(-3px, 1px) rotate(0deg); }
-    7% { transform: translate(3px, 1px) rotate(-1deg); }
+    0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+    1% { transform: translate(-0.5px, -1px) rotate(-0.5deg); }
+    2% { transform: translate(-1.5px, 0px) rotate(0.5deg); }
+    3% { transform: translate(1.5px, 1px) rotate(0deg); }
+    4% { transform: translate(0.5px, -0.5px) rotate(0.5deg); }
+    5% { transform: translate(-0.5px, 0.5px) rotate(-0.5deg); }
+    6% { transform: translate(-1.5px, 0.5px) rotate(0deg); }
+    7% { transform: translate(1.5px, 0.5px) rotate(-0.5deg); }
     8% { transform: translate(0px, 0px) rotate(0deg); }
     100% { transform: translate(0px, 0px) rotate(0deg); }
 }
@@ -301,10 +302,22 @@ footer a:hover {
 .coloredWord{
     color: #ffffff;
     background: #c1000042;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
     padding-right: 5px;
+}
+
+.coloredWord span {
+    background: #44141442;
+}
+
+.coloredWord:hover span {
+    display: none;
+}
+
+.coloredWord:hover:before {
+    content: attr(data-replace-text);
 }
 
 .coloredText {
@@ -312,7 +325,7 @@ footer a:hover {
 }
 
 .coloredWord:hover {
-    color: #a9a9a9;
+    color: #d9d9d9;
     cursor: pointer;
 }
 

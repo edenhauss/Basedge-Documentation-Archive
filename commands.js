@@ -1,6 +1,7 @@
 class Command {
     constructor(command, description = null, cooldown = null, permissions = null, syntax = null, exampleUserMsg = null, exampleBotMsg = null, exampleTwitchMsg = null) {
         this.name = command.cmd;
+        this.icon = command.icon;
         this.description = description;
         this.cooldown = cooldown;
         this.permissions = permissions;
@@ -159,49 +160,52 @@ const CommandsList = [
     new Command({ cmd: "!color" }, "Цвет никнейма", 3, { msg: "Все" }, "!цвет",
         { msg: "!цвет", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["&mooncat3, твой цвет Салатовый"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", 30, { msg: "Все" }, "!прогноз $region",
+    new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", 30, { msg: "Все" }, "!прогноз [объект/город/страна]$region",
         { msg: "!прогноз Москва", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, прогноз для Москва, Россия. Вторник: +28°C 🌤 Облачно с прояснениями. Среда: +30°C ☁ Пасмурно. Четверг: +29°C 🌧 Небольшой дождь"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!math" }, "Решение примера", 5, { msg: "Все" }, "!math $problem",
+    new Command({ cmd: "!math" }, "Решение примера", 5, { msg: "Все" }, "!math [любой математический пример]$problem",
         { msg: "!math 2*2", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  2*2 = 4"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня", 30, { msg: "Все" }, "!погода $region",
+    new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня", 30, { msg: "Все" }, "!погода [объект/город/страна]$region",
         { msg: "!погода Москва", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, погода в Москва, Россия. 🕑 Местное время - 18:15 🌡 +27°C (ощущается как +26°C) 🌤 Облачно с прояснениями 💧 Влажность - 41% 💨 1.6м/с 🌆 Закат в 20:35"], badges: [Badges.mod, Badges.no_video]}),
 ];
 
 const GameCommandsList = [
-    new Command({ cmd: "!casino" }, "Виртуальное казино", 3, { msg: "Все" },"!казино $bet $amount",
+    new Command({ cmd: "!casino" }, "Виртуальное казино", 3, { msg: "Все" },"!казино [черное/желтое/красное/зеленое]$bet [количество игровой валюты]$amount",
         { msg: "!казино желтое 100", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, выпадает x3 (желтое). Вы выиграли +300.0р. Баланс: 450.0р"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!roulette" }, "Русская рулетка", 5, { badges: [Badges.vip, Badges.sub] },"!рулетка",
         { msg: "!рулетка", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 жмет на курок..."], badges: [Badges.mod, Badges.no_video]}, "basedgebot timed out mooncat3 for 60 seconds."),
-    new Command({ cmd: "!slots" }, "Слоты", 3, { msg: "Все" },"!слоты $amount",
+    new Command({ cmd: "!slots" }, "Слоты", 3, { msg: "Все" },"!слоты [количество игровой валюты]$amount",
         { msg: "!слоты 150", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, |🍒| |🍉| |🍒| Вы проиграли -150.0р. Баланс: 300.0р"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!trade" }, "Акции", 3, { msg: "Все" },"!трейд $bet $amount",
+    new Command({ cmd: "!trade" }, "Акции", 3, { msg: "Все" },"!трейд [вверх/вниз]$bet [количество игровой валюты]$amount",
         { msg: "!трейд вниз 250", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, акции пошли вверх 📈 Вы выиграли +250.0р. Баланс 550.0р"], badges: [Badges.mod, Badges.no_video]}),
 ];
 
 const AdminCommandsList = [
-    new Command({ cmd: "!add" }, "Добавить кастомную команду", 0, { badges: [Badges.mod] },"!add $command $cooldown $message",
+    new Command({ cmd: "!add" }, "Добавить кастомную команду", 0, { badges: [Badges.mod] },"!add [название команды]$command [кд в секундах]$cooldown [сообщение]$message",
         { msg: "!add !вк 10 vk.com/me", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, команда !вк добавлена"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!ban" }, "Блокировка пользователя", 0, { badges: [Badges.mod] },"!ban $user $reason",
+    new Command({ cmd: "!ban" }, "Блокировка пользователя", 0, { badges: [Badges.mod] },"!ban [пользователь]$user [причина]$reason",
         { msg: "!ban morange51 п-ворд", badges: [Badges.broadcaster, Badges.glitch] },
         null, "basedgebot banned morange51. Reason: п-ворд."),
-    new Command({ cmd: "!del" }, "Удалить кастомную команду", 0, { badges: [Badges.mod] },"!del $command",
+    new Command({ cmd: "!del" }, "Удалить кастомную команду", 0, { badges: [Badges.mod] },"!del [название команды]$command",
         { msg: "!del !вк", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, команда !вк удалена"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!mute" }, "Таймаут пользователя", 0, { badges: [Badges.mod] },"!mute $user $seconds $reason",
+    new Command({ cmd: "!info" }, "Кастомные команды канала", 0, { badges: [Badges.mod, Badges.vip, Badges.sub] },"!info",
+        { msg: "!info", badges: [Badges.broadcaster, Badges.glitch] },
+        { msg: ["mooncat3, !тг, !дс, !инст, !0"], badges: [Badges.mod, Badges.no_video]}),
+    new Command({ cmd: "!mute" }, "Таймаут пользователя", 0, { badges: [Badges.mod] },"!mute [пользователь]$user [время таймаута]$seconds [причина]$reason",
         { msg: "!mute morange51 60 спам", badges: [Badges.broadcaster, Badges.glitch] },
         null, "basedgebot timed out morange51 for 60 seconds. Reason: спам."),
-    new Command({ cmd: "!spam" }, "Спам фразой", 3, { badges: [Badges.mod, Badges.vip] },"!spam $amount $message",
+    new Command({ cmd: "!spam" }, "Спам фразой", 3, { badges: [Badges.mod, Badges.vip] },"!spam [количество]$amount [сообщение]$message",
         { msg: "!spam 5 Подписывайтесь на мой телеграм - t.me/", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["Подписывайтесь на мой телеграм - t.me/", "Подписывайтесь на мой телеграм - t.me/", "Подписывайтесь на мой телеграм - t.me/", "Подписывайтесь на мой телеграм - t.me/", "Подписывайтесь на мой телеграм - t.me/"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!unban" }, "Разжалование пользователя", 0,{ badges: [Badges.mod] },"!unban $user",
+    new Command({ cmd: "!unban" }, "Разжалование пользователя", 0,{ badges: [Badges.mod] },"!unban [пользователь]$user",
         { msg: "!unban morange51", badges: [Badges.broadcaster, Badges.glitch] },
         null, "basedgebot removed ban on morange51."),
 
