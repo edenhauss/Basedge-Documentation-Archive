@@ -59,8 +59,8 @@ html {
     filter: brightness(80%);
 
     background: #1a1a1a;
-    animation: Header 2s;
-    animation-delay: 1.5s;
+    animation: Header 1.5s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
 }
 
@@ -126,8 +126,8 @@ header .stabilize {
 
 .several-containers {
     opacity: 0;
-    animation: ContainerOpacity 2s;
-    animation-delay: 2.5s;
+    animation: ContainerOpacity 1.5s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -146,8 +146,8 @@ header .stabilize {
 
     font-family: "mont";
     transition: 0.2s;
-    animation: HeaderOpacity 2s;
-    animation-delay: 2.5s;
+    animation: HeaderOpacity 1.5s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -206,14 +206,14 @@ header .stabilize {
     position: relative;
 }
 
-#footer img {
-    height: 50px;
+#footer .poopoo {
+    height: 52px;
     left: -5%;
     bottom: 60px;
     position: absolute;
 
-    animation: poopoo 20s infinite;
-    animation-delay: 3s;
+    animation: poopoo 40s infinite linear;
+    animation-delay: 1.5s;
 }
 
 @keyframes poopoo {
@@ -221,7 +221,7 @@ header .stabilize {
         left: -5%;
         bottom: 60px;
     }
-    80% {
+    95% {
         left: 95%;
         bottom: 60px;
     }
@@ -243,17 +243,26 @@ header .stabilize {
     gap: 20px;
 }
 
-.footerItem {
-    width: 30px;
-    height: 30px;
+footer .a1 {
     background-color: #161616;
+    width: 40px;
+    height: 40px;
+
+    animation: shake 5s;
+    animation-iteration-count: infinite;
 }
 
-footer .a1 {
-    background-size: contain;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    background-image: url("images/linktree.png");
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    1% { transform: translate(-1px, -2px) rotate(-1deg); }
+    2% { transform: translate(-3px, 0px) rotate(1deg); }
+    3% { transform: translate(3px, 2px) rotate(0deg); }
+    4% { transform: translate(1px, -1px) rotate(1deg); }
+    5% { transform: translate(-1px, 2px) rotate(-1deg); }
+    6% { transform: translate(-3px, 1px) rotate(0deg); }
+    7% { transform: translate(3px, 1px) rotate(-1deg); }
+    8% { transform: translate(0px, 0px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
 }
 
 footer a:hover {
@@ -391,7 +400,7 @@ td>.exampleTwitchMsg {
     background-size: contain;
     border-radius: 5px;
     background-position-x: center;
-    animation: LogoStart 3s ease-in-out forwards;
+    animation: LogoStart 1.5s ease-in-out forwards;
     transition: 0.2s;
 }
 
@@ -410,7 +419,7 @@ td>.exampleTwitchMsg {
     background: linear-gradient(to right, var(--main-color), transparent);
     background-size: 20px;
     background-repeat: no-repeat;
-    animation: LogoForegroundStart 3s ease-in-out forwards;
+    animation: LogoForegroundStart 1.5s ease-in-out forwards;
 }
 
 .tooltip {

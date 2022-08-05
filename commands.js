@@ -156,31 +156,31 @@ const Badges = {
 }
 
 const CommandsList = [
-    new Command({ cmd: "!color" }, "Цвет никнейма", 3, { badges: [Badges.glitch] }, "!цвет",
+    new Command({ cmd: "!color" }, "Цвет никнейма", 3, { msg: "Все" }, "!цвет",
         { msg: "!цвет", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["&mooncat3, твой цвет Салатовый"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", 30, { badges: [Badges.glitch] }, "!прогноз $region",
+    new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", 30, { msg: "Все" }, "!прогноз $region",
         { msg: "!прогноз Москва", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, прогноз для Москва, Россия. Вторник: +28°C 🌤 Облачно с прояснениями. Среда: +30°C ☁ Пасмурно. Четверг: +29°C 🌧 Небольшой дождь"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!math" }, "Решение примера", 5, { badges: [Badges.glitch] }, "!math $problem",
+    new Command({ cmd: "!math" }, "Решение примера", 5, { msg: "Все" }, "!math $problem",
         { msg: "!math 2*2", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  2*2 = 4"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня", 30, { badges: [Badges.glitch] }, "!погода $region",
+    new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня", 30, { msg: "Все" }, "!погода $region",
         { msg: "!погода Москва", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, погода в Москва, Россия. 🕑 Местное время - 18:15 🌡 +27°C (ощущается как +26°C) 🌤 Облачно с прояснениями 💧 Влажность - 41% 💨 1.6м/с 🌆 Закат в 20:35"], badges: [Badges.mod, Badges.no_video]}),
 ];
 
 const GameCommandsList = [
-    new Command({ cmd: "!casino" }, "Виртуальное казино", 3, { badges: [Badges.glitch] },"!казино $bet $amount",
+    new Command({ cmd: "!casino" }, "Виртуальное казино", 3, { msg: "Все" },"!казино $bet $amount",
         { msg: "!казино желтое 100", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, выпадает x3 (желтое). Вы выиграли +300.0р. Баланс: 450.0р"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!roulette" }, "Русская рулетка", 5, { badges: [Badges.vip, Badges.sub] },"!рулетка",
         { msg: "!рулетка", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 жмет на курок..."], badges: [Badges.mod, Badges.no_video]}, "basedgebot timed out mooncat3 for 60 seconds."),
-    new Command({ cmd: "!slots" }, "Слоты", 3, { badges: [Badges.glitch] },"!слоты $amount",
+    new Command({ cmd: "!slots" }, "Слоты", 3, { msg: "Все" },"!слоты $amount",
         { msg: "!слоты 150", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, |🍒| |🍉| |🍒| Вы проиграли -150.0р. Баланс: 300.0р"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!trade" }, "Акции", 3, { badges: [Badges.glitch] },"!трейд $bet $amount",
+    new Command({ cmd: "!trade" }, "Акции", 3, { msg: "Все" },"!трейд $bet $amount",
         { msg: "!трейд вниз 250", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, акции пошли вверх 📈 Вы выиграли +250.0р. Баланс 550.0р"], badges: [Badges.mod, Badges.no_video]}),
 ];
