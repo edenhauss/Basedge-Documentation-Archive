@@ -243,6 +243,10 @@ header .stabilize {
     gap: 20px;
 }
 
+footer a {
+    background-color: inherit;
+}
+
 footer .a1 {
     background-color: #161616;
     width: 40px;
