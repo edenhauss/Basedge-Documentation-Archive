@@ -20,6 +20,11 @@ body {
     height: 100%;
 }
 
+@font-face {
+    font-family: "mont";
+    src: url("Montserrat-Light.ttf");
+}
+
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -60,7 +65,7 @@ html {
 }
 
 header p {
-    font-family: "Montserrat Light";
+    font-family: "mont";
 }
 
 header .attention {
@@ -139,7 +144,7 @@ header .stabilize {
     border-radius: 3px;
     opacity: 0;
 
-    font-family: "Montserrat Light";
+    font-family: "mont";
     transition: 0.2s;
     animation: HeaderOpacity 2s;
     animation-delay: 2.5s;
@@ -409,7 +414,7 @@ td>.exampleTwitchMsg {
 }
 
 .tooltip {
-    font-family: "Montserrat Light";
+    font-family: "mont";
     position: fixed;
     padding: 2px 6px;
     border: 1px solid var(--border-color);
