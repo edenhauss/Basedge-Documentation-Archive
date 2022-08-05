@@ -252,7 +252,7 @@ footer .a1 {
     width: 35px;
     height: 35px;
 
-    animation: shake 4s;
+    animation: shake 8s;
     animation-delay: 10s;
     animation-iteration-count: infinite;
 }
