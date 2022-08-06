@@ -72,6 +72,7 @@ function ShowCommand(cmd, button) {
     Array.from(document.getElementsByClassName("commandButton")).forEach((btn) => {
         btn.classList.remove("selected");
     });
+    button.classList.add("selected");
 }
 
 function ShowPage(page) {
