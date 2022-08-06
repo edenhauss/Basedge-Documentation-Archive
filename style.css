@@ -212,8 +212,8 @@ header .stabilize {
     bottom: 53px;
     position: absolute;
 
-    animation: poopoo 140s infinite linear;
-    animation-delay: 1.5s;
+    /*animation: poopoo 140s infinite linear;*/
+    /*animation-delay: 1.5s;*/
 }
 
 @keyframes poopoo {
