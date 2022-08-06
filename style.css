@@ -211,6 +211,7 @@ header .stabilize {
     left: -3%;
     bottom: 53px;
     position: absolute;
+    opacity: 0;
 
     /*animation: poopoo 140s infinite linear;*/
     /*animation-delay: 1.5s;*/
