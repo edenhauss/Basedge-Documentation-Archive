@@ -59,7 +59,7 @@ class Command {
         if (this.syntax !== null) {
             let tr = document.createElement("tr");
             let td = document.createElement("td");
-            td.textContent = "Синтаксис";
+            td.textContent = "Написание";
             tr.append(td);
             td = document.createElement("td");
             td.innerHTML = GetFormattedStringSpan(this.syntax);
