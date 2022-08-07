@@ -22,7 +22,7 @@ body {
 
 @font-face {
     font-family: "mont";
-    src: url("Montserrat-Light.ttf");
+    src: url("fonts/Montserrat-Light.ttf");
 }
 
 ::-webkit-scrollbar {
