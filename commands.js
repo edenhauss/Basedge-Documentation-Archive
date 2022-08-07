@@ -217,7 +217,9 @@ const AdminCommandsList = [
     new Command({ cmd: "!unban" }, "Разжалование пользователя", 0,{ badges: [Badges.mod] },"!unban [пользователь]$user",
         { msg: "!unban morange51", badges: [Badges.broadcaster, Badges.glitch] },
         null, "basedgebot removed ban on morange51."),
-
+    new Command({ cmd: "!unblock" }, "Удалить пользователя из черного списка", 0,{ badges: [Badges.mod] },"!unblock [пользователь]$user",
+        { msg: "!unblock morange51", badges: [Badges.broadcaster, Badges.glitch] },
+        { msg: ["mooncat3, morange51 больше не игнорируется"], badges: [Badges.mod, Badges.no_video]}),
 ];
 
 const TestCommandsList = [
