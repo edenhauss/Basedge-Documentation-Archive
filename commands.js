@@ -174,7 +174,7 @@ const CommandsList = [
     new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", "!прогноз",30, { msg: "Все" }, "!forecast [объект/город/страна]$region",
         { msg: "!прогноз Москва", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3, прогноз для Москва, Россия. Вторник: +28°C 🌤 Облачно с прояснениями. Среда: +30°C ☁ Пасмурно. Четверг: +29°C 🌧 Небольшой дождь"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!math" }, "Решение примера", null,5, { msg: "Все" }, "!math [любой математический пример]$problem",
+    new Command({ cmd: "!math" }, "Решение примера", "!калькулятор",5, { msg: "Все" }, "!math [любой математический пример]$problem",
         { msg: "!math 2*2", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  2*2 = 4"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!pyramid" }, "Строит пирамиду из эмоута", "!пирамида",30, { badges: [Badges.mod, Badges.vip, Badges.sub] }, "!pyramid [эмоут]$emote",
