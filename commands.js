@@ -1,7 +1,7 @@
 class Command {
     constructor(command, description = null, aliases = null, cooldown = null, permissions = null, syntax = null, exampleUserMsg = null, exampleBotMsg = null, exampleTwitchMsg = null) {
         this.name = command.cmd;
-        this.icon = command.icon;
+        this.text = command.text
         this.description = description;
         this.aliases = aliases;
         this.cooldown = cooldown;
@@ -168,13 +168,13 @@ const Badges = {
 }
 
 const CommandsList = [
-    new Command({ cmd: "!color" }, "Цвет никнейма", "!цвет", 3, { msg: "Все" }, "!color",
+    new Command({ cmd: "!color"}, "Цвет никнейма", "!цвет", 3, { msg: "Все" }, "!color",
         { msg: "!цвет", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["&mooncat3, твой цвет Салатовый"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!debug" }, "Сообщить об ошибке", null, 30, { msg: "Все" }, "!debug [сообщение]$message",
         { msg: "!debug Не работает команда", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["&mooncat3, сообщение отправлено"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!en" }, "Транслирует кириллицу в латиницу", null,10, { msg: "Все" }, "!ru [сообщение]$message",
+    new Command({ cmd: "!en", text: "NEW" }, "Транслирует кириллицу в латиницу", null,10, { msg: "Все" }, "!ru [сообщение]$message",
         { msg: "!ru Руддщ умукнщту", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 -> Hello everyone"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!forecast" }, "Прогноз погоды на 3 дня", "!прогноз",30, { msg: "Все" }, "!forecast [объект/город/страна]$region",
@@ -186,7 +186,7 @@ const CommandsList = [
     new Command({ cmd: "!pyramid" }, "&НE РАБОТАЕТ Строит пирамиду из эмоута", "!пирамида",30, { badges: [Badges.mod, Badges.vip, Badges.sub] }, "!pyramid [эмоут]$emote",
         { msg: "!pyramid Basedge", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["[представьте пирамидку из Basedge]"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!ru" }, "Транслирует латиницу в кириллицу", null,10, { msg: "Все" }, "!en [сообщение]$message",
+    new Command({ cmd: "!ru", text: "NEW"  }, "Транслирует латиницу в кириллицу", null,10, { msg: "Все" }, "!en [сообщение]$message",
         { msg: "!ru Dctv ghbdtn", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 -> Всем привет"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня","!погода", 30, { msg: "Все" }, "!weather [объект/город/страна]$region",

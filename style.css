@@ -195,8 +195,13 @@ header .stabilize {
     border-color: var(--border-color);
 }
 
-.commandButton>img {
-    height: 25px;
+.commandText {
+    background: inherit;
+    height: 10px;
+    color: rgb(255 205 64);
+    margin-left: 5px;
+    font-family: monospace;
+    letter-spacing: 1px;
 }
 
 #page {
@@ -295,6 +300,10 @@ footer a:hover {
     filter: brightness(140%);
 }
 
+.commandButton.selected span{
+    color: rgb(98 98 98);
+}
+
 #CommandInfoContainer {
     margin-right: 10px;
     width: 100%;
@@ -382,8 +391,7 @@ footer a:hover {
 .userIcon {
     width: 18px;
     margin-right: 3px;
-    position: relative;
-    top: 3px;
+    transform: translateY(3px);
 }
 
 .exampleBot {

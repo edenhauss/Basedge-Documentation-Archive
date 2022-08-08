@@ -61,6 +61,13 @@ function ShowTablePage(page) {
         cmdButton.onclick = function () {
             ShowCommand(cmd, cmdButton);
         }
+        if (cmd.text) {
+            let cmdText = document.createElement('span');
+            cmdText.src = cmd.text;
+            cmdText.classList.add('commandText');
+            cmdText.textContent = cmdText.src;
+            cmdButton.appendChild(cmdText);
+        }
         CommandsListElem.appendChild(cmdButton);
     });
     if (data.length > 0) ShowCommand(data[0], document.getElementsByClassName("commandButton")[0]);
