@@ -180,7 +180,7 @@ const CommandsList = [
     new Command({ cmd: "!math" }, "Решение примера", "!калькулятор",5, { msg: "Все" }, "!math [любой математический пример]$problem",
         { msg: "!math 2*2", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  2*2 = 4"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!pyramid" }, "&НЕ РАБОТАЕТ Строит пирамиду из эмоута", "!пирамида",30, { badges: [Badges.mod, Badges.vip, Badges.sub] }, "!pyramid [эмоут]$emote",
+    new Command({ cmd: "!pyramid" }, "&НE РАБОТАЕТ Строит пирамиду из эмоута", "!пирамида",30, { badges: [Badges.mod, Badges.vip, Badges.sub] }, "!pyramid [эмоут]$emote",
         { msg: "!pyramid Basedge", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  TODO"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!weather" }, "Прогноз погоды на сегодня","!погода", 30, { msg: "Все" }, "!weather [объект/город/страна]$region",
