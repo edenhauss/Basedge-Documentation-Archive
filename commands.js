@@ -183,9 +183,6 @@ const CommandsList = [
     new Command({ cmd: "!math" }, "Решение примера", "!калькулятор",5, { msg: "Все" }, "!math [любой математический пример]$problem",
         { msg: "!math 2*2", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3,  2*2 = 4"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!pyramid" }, "&НE РАБОТАЕТ Строит пирамиду из эмоута", "!пирамида",30, { badges: [Badges.mod, Badges.vip, Badges.sub] }, "!pyramid [эмоут]$emote",
-        { msg: "!pyramid Basedge", badges: [Badges.broadcaster, Badges.glitch] },
-        { msg: ["[представьте пирамидку из Basedge]"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!ru", text: "NEW"  }, "Транслирует латиницу в кириллицу", null,10, { msg: "Все" }, "!ru [сообщение]$message",
         { msg: "!ru Dctv ghbdtn", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 -> Всем привет"], badges: [Badges.mod, Badges.no_video]}),
@@ -195,18 +192,9 @@ const CommandsList = [
 ];
 
 const GameCommandsList = [
-    new Command({ cmd: "!casino" }, "&НЕ РАБОТАЕТ Виртуальное казино", "!казино",3, { msg: "Все" },"!casino [черное/желтое/красное/зеленое]$bet [количество игровой валюты]$amount",
-        { msg: "!казино желтое 100", badges: [Badges.broadcaster, Badges.glitch] },
-        { msg: ["mooncat3, выпадает x3 (желтое). Вы выиграли +300.0р. Баланс: 450.0р"], badges: [Badges.mod, Badges.no_video]}),
     new Command({ cmd: "!roulette" }, "Русская рулетка", "!рулетка",5, { badges: [Badges.vip, Badges.sub] },"!roulette",
         { msg: "!рулетка", badges: [Badges.broadcaster, Badges.glitch] },
         { msg: ["mooncat3 жмет на курок..."], badges: [Badges.mod, Badges.no_video]}, "basedgebot timed out mooncat3 for 60 seconds."),
-    new Command({ cmd: "!slots" }, "&НЕ РАБОТАЕТ Слоты", "!слоты",3, { msg: "Все" },"!slots [количество игровой валюты]$amount",
-        { msg: "!слоты 150", badges: [Badges.broadcaster, Badges.glitch] },
-        { msg: ["mooncat3, |🍒| |🍉| |🍒| Вы проиграли -150.0р. Баланс: 300.0р"], badges: [Badges.mod, Badges.no_video]}),
-    new Command({ cmd: "!trade" }, "&НЕ РАБОТАЕТ Акции", "!трейд",3, { msg: "Все" },"!trade [вверх/вниз]$bet [количество игровой валюты]$amount",
-        { msg: "!трейд вниз 250", badges: [Badges.broadcaster, Badges.glitch] },
-        { msg: ["mooncat3, акции пошли вверх 📈 Вы выиграли +250.0р. Баланс 550.0р"], badges: [Badges.mod, Badges.no_video]}),
 ];
 
 const AdminCommandsList = [
